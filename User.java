@@ -5,7 +5,7 @@ public class User extends Person{
     }
     @Override
     public void displayinfo(){
-        System.out.println("User: "+getUsername);
+        System.out.println("User: "+getUsername());
     }
     @Override
     public void showMenu(){
@@ -23,11 +23,11 @@ public class User extends Person{
             throw new IllegalArgumentException("Invalid movie selection.");
 
         }
-        Movie selected = DataStore.movie.get(choice);
+        Movie selected = DataStore.movies.get(choice);
         System.out.println("Enter number of seats:");
         int seats=Integer.parseInt(sc.nextLine());
         if(selected.bookSeats(seats)){
-            DataStore.bookings.add(new Booking(getUsername(),selected.getName(), seats()));
+            DataStore.bookings.add(new Booking(getUsername(),selected.getName(), seats));
         }else{
             System.out.println("x Not enough seats");
         }
