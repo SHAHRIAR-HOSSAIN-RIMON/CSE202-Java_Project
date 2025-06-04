@@ -1,5 +1,7 @@
 import java.util.ArrayList;
+
 public class DataStore{
+    
     public static ArrayList<Movie>movies= new ArrayList<>();
     public static ArrayList<Booking>bookings= new ArrayList<>();
 

@@ -1,14 +1,20 @@
 import java.util.Scanner;
 public class Admin extends Person{
+
     public Admin(String user,String pass){
         super(user,pass);
     }
+
     @Override
     public void displayinfo(){
-        System.out.println("Admin"+getUsername());
+        System.out.println("Admin" + getUsername());
+    
     }
+
     public void showMenu(){
+        
         Scanner sc = new Scanner(System.in);
+
         while(true){
             System.out.println("\n--- Admin Menu ---");
             System.out.println("1. Add Movie");
@@ -47,12 +53,15 @@ public class Admin extends Person{
         try {
             System.out.print("Enter movie name: ");
             String name = sc.nextLine();
+            
             System.out.print("Enter available seats: ");
             int seats = Integer.parseInt(sc.nextLine());
+
             System.out.print("Enter ticket price: ");
             double price = Double.parseDouble(sc.nextLine());
 
             DataStore.movies.add(new Movie(name, seats, price));
+            
             System.out.println(" Movie added successfully.");
         } catch (NumberFormatException e) {
             System.out.println("Invalid input. Seats must be integer and price must be a number.");
